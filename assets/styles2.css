@@ -2,16 +2,21 @@
    justify-content: center;
 }
 
-img {
-    max-height:100%;
-    max-width: 100%;
+img.logo {
+    max-height:50%;
+    max-width: 50%;
 }
     
 div.field.has-addons{
-    align-items: center; 
+    margin: 10px;
+justify-content: center;
 }
 
 .is-active {
     justify-content: center;
+
+}
+span.navbar-item{
+    margin: 0;
 
 }
