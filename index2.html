@@ -1,74 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
- <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
->
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="assets/styles2.css" />
+  </head>
+  <body>
     <section class="hero is-primary is-medium">
-        <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a class="navbar-item">
-                  <img src="https://bulma.io/assets/images/bulma-type-white.png" alt="Logo" />
-                </a>
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item"></a>
+                <figure class="image ">
+                  <img 
+                    class="logo is-rounded"
+                    src="assets/images/Diyhublogo.png"
+                    alt="Logo"
+                  />
+                </figure>
                 <span class="navbar-burger" data-target="navbarMenuHeroA">
                   <span></span>
                   <span></span>
                   <span></span>
-                  <span></span>
+
+                 <span></span>
+                </span>
+              
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active"> Home </a>
+                <span class="navbar-item">
+                  <a class="button is-primary is-inverted">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Images</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
+                  <a class="button is-primary is-inverted">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Videos</span>
+                  </a>
                 </span>
               </div>
-              <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                  <a class="navbar-item is-active"> Home </a>
-                  <a class="navbar-item"> Images </a>
-                  <a class="navbar-item"> Video </a>
-                  <span class="navbar-item">
-                    <a class="button is-primary is-inverted">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Search</span>
-                    </a>
-                  </span>
-                </div>
-              </div>
             </div>
-          </nav>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">DIY HUB</p>
+          <p class="subtitle">Home Improvement App</p>
         </div>
-      
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <p class="title">DIY HUB</p>
-            <p class="subtitle">Home Improvment App</p>
+        <div class="field has-addons">
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Choose your project"
+            />
+          </div>
+          <div class="control">
+            <button class="button is-info">Search</button>
           </div>
         </div>
-      
-        <!-- Hero footer: will stick at the bottom -->
-        <div class="hero-foot">
-          <nav class="tabs">
-            <div class="container">
-              <ul>
-                <li class="is-active"><a>Overview</a></li>
-                <li><a>Modifiers</a></li>
-                <li><a>Grid</a></li>
-                <li><a>Elements</a></li>
-                <li><a>Components</a></li>
-                <li><a>Layout</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </section>
-    
-</body>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container is-centered">
+            <ul>
+              <li class="is-active has-text-centered"><a>Overview</a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </body>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>DIY Hub</strong> by
+        <a href="https://jgthms.com">Team No Sleep</a>. The source code is
+        licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+        website was created in 2024
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+          >CC BY NC SA 4.0</a
+        >.
+      </p>
+    </div>
+  </footer>
 </html>

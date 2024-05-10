@@ -1,0 +1,22 @@
+.control {
+   justify-content: center;
+}
+
+img.logo {
+    max-height:50%;
+    max-width: 50%;
+}
+    
+div.field.has-addons{
+    margin: 10px;
+justify-content: center;
+}
+
+.is-active {
+    justify-content: center;
+
+}
+span.navbar-item{
+    margin: 0;
+
+}
