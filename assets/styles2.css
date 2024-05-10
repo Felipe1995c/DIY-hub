@@ -1,0 +1,17 @@
+.control {
+   justify-content: center;
+}
+
+img {
+    max-height:100%;
+    max-width: 100%;
+}
+    
+div.field.has-addons{
+    align-items: center; 
+}
+
+.is-active {
+    justify-content: center;
+
+}
