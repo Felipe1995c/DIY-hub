@@ -1,12 +1,25 @@
 "use strict";
 
-// API KEY
-// AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw
+const searchInput = document.querySelector( "#search-input" );
+const searchBtn = document.querySelector( "#search-btn" );
 
-fetch( `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw&q=anime&part=snippet&type=video` )
-  .then( function( res ) {
-    return res.json();
-  } )
-  .then( function( data ) {
-    console.log( data );
-  } );
+const apiObj = {
+  key : "AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw",
+  searchUrl : "https://www.googleapis.com/youtube/v3/search"
+}
+
+// Fetch Data From Youtube API
+const fetchYoutubeApi = async function() {
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&part=snippet&type=video&maxResults=3` );
+  const searchData = await searchRes.json();
+  return searchData;
+}
+
+// Transfer Youtube Data to Local Storage
+// Redirect to index.html page
+searchBtn.addEventListener( "click", async function( event ) {
+  event.preventDefault();
+  const youtubeData = await fetchYoutubeApi();
+  localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+  window.location.href = "./index.html"
+} );
