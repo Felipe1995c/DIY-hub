@@ -10,7 +10,7 @@ const apiObj = {
 
 // Fetch Data From Youtube API
 const fetchYoutubeApi = async function() {
-  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&part=snippet&type=video&maxResults=3` );
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&type=video&maxResults=3&order=viewCount` );
   const searchData = await searchRes.json();
   return searchData;
 }
@@ -23,6 +23,3 @@ searchBtn.addEventListener( "click", async function( event ) {
   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
   window.location.href = "./index.html"
 } );
-
-// Dropdown menu modul
-
