@@ -23,7 +23,7 @@ span.navbar-item{
 }
 
 body {
-    background-image: url(/assets/images/Diy-Background.jpg);
+    background-image: url("./images/Diy-Background.jpg");
     height: 100%;
     
     
