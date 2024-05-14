@@ -9,10 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="assets/styles2.css" />
+    <link rel="stylesheet" href="./assets/styles2.css" />
   </head>
   <body>
-    <section class="hero is-primary is-medium">
+    <section class="hero is-medium ">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
@@ -22,7 +22,7 @@
                 <figure class="image ">
                   <img 
                     class="logo is-rounded"
-                    src="assets/images/Diyhublogo.png"
+                    src="./assets/images/Diyhublogo.png"
                     alt="Logo"
                   />
                 </figure>
@@ -73,7 +73,7 @@
             </div>
           </div>
         </nav>
-      </div>
+      
 
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
@@ -85,14 +85,30 @@
           <div class="control">
 
             <!-- Alejandro: Added id of search-input, so I can select it in Javascript -->
-            <input
-              class="input"
-              id="search-input"
-              type="text"
-              placeholder="Choose your project"
-            />
-          </div>
-          <div class="control">
+
+            <div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+      <span>Choose your project</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item"> Front Porch </a>
+      <a href="#" class="dropdown-item"> Hall Way </a>
+      <a href="#" class="dropdown-item"> Dining Room </a>
+      <a href="#" class="dropdown-item"> Living Room </a>
+      <a href="#" class="dropdown-item"> Kitchen </a>
+      <a href="#" class="dropdown-item"> Bathroom </a>
+      <a href="#" class="dropdown-item"> Bedroom </a>
+      <hr class="dropdown-divider" />
+      <a href="#" class="dropdown-item"> More </a>
+    </div>
+  </div>
+</div>
 
             <!-- Alejandro: Added id of search-btn, so I can select it in Javascript -->
             <button class="button is-info" id="search-btn">Search</button>
@@ -101,7 +117,7 @@
       </div>
 
       <!-- Hero footer: will stick at the bottom -->
-      <div class="hero-foot">
+      <!-- <div class="hero-foot">
         <nav class="tabs">
           <div class="container is-centered">
             <ul>
@@ -116,7 +132,7 @@
         </nav>
       </div>
     </section>
-  </body>
+  </body> -->
 
   <!-- Alejandro: Linked the script.js file -->
   <script src="./assets/script.js"></script>

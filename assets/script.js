@@ -23,3 +23,6 @@ searchBtn.addEventListener( "click", async function( event ) {
   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
   window.location.href = "./index.html"
 } );
+
+// Dropdown menu modul
+
