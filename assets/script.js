@@ -23,12 +23,3 @@ searchBtn.addEventListener( "click", async function( event ) {
   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
   window.location.href = "./index.html"
 } );
-
-// Tumblr Test
-// fetch('https://api.tumblr.com/v2/tagged?tag=wooden+bench&api_key=zERLc2rZrUZmPFug5AJoDZf3X0IAkt8rJ7asb784X5PijekyyZ')
-//   .then( res => {
-//     return res.json();
-//   })
-//   .then( data => {
-//     console.log( data );
-//   });

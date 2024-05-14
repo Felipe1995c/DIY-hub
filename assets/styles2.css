@@ -21,3 +21,20 @@ span.navbar-item{
     display: inline;
 
 }
+
+body {
+    background-image: url(/assets/images/Diy-Background.jpg);
+    height: 100%;
+    
+    
+}
+
+p.title {
+    font-size: 100px;
+    text-decoration: black;
+}
+
+p.subtitle{
+    font-size: 50px;
+    text-decoration: black;
+}
