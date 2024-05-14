@@ -10,7 +10,7 @@ const apiObj = {
 
 // Fetch Data From Youtube API
 const fetchYoutubeApi = async function() {
-  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&part=snippet&type=video&maxResults=3` );
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&type=video&maxResults=3&order=viewCount` );
   const searchData = await searchRes.json();
   return searchData;
 }
@@ -23,3 +23,12 @@ searchBtn.addEventListener( "click", async function( event ) {
   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
   window.location.href = "./index.html"
 } );
+
+// Tumblr Test
+// fetch('https://api.tumblr.com/v2/tagged?tag=wooden+bench&api_key=zERLc2rZrUZmPFug5AJoDZf3X0IAkt8rJ7asb784X5PijekyyZ')
+//   .then( res => {
+//     return res.json();
+//   })
+//   .then( data => {
+//     console.log( data );
+//   });
