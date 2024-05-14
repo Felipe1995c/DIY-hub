@@ -10,7 +10,7 @@ const apiObj = {
 
 // Fetch Data From Youtube API
 const fetchYoutubeApi = async function() {
-  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=${ searchInput.value }&type=video&maxResults=3&order=viewCount` );
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&q=ducks&type=video&maxResults=3&order=viewCount` );
   const searchData = await searchRes.json();
   return searchData;
 }
