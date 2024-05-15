@@ -6,6 +6,7 @@ const fetchYoutubeApi = async function() {
   return searchData;
 }
 
+pageStart();
 
 const pageStart = async function() {
   const searchInput = document.querySelector( "#search-input" );
@@ -21,7 +22,6 @@ const pageStart = async function() {
 }
 
 pageStart();
-
 // Transfer Youtube Data to Local Storage
 // Redirect to index.html page
 button.addEventListener( "click", async function( event ) {
