@@ -6,20 +6,6 @@ const fetchYoutubeApi = async function() {
   return searchData;
 }
 
-
-const pageStart = async function() {
-  const searchInput = document.querySelector( "#search-input" );
-  const searchBtn = document.querySelector( "#search-btn" );
-
-
-  searchBtn.addEventListener( "click", async function( event ) {
-    event.preventDefault();
-    const youtubeData = await fetchYoutubeApi();
-    localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-    window.location.href = "./index.html";
-  } );
-}
-
 pageStart();
 
 const pageStart = async function() {
