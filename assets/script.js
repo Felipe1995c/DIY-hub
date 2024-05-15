@@ -24,7 +24,7 @@ const pageStart = async function() {
 pageStart();
 // Transfer Youtube Data to Local Storage
 // Redirect to index.html page
-button.addEventListener( "click", async function( event ) {
+searchBtn.addEventListener( "click", async function( event ) {
   event.preventDefault();
   const youtubeData = await fetchYoutubeApi();
   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal($modal);
     });
   }
-console.log(document)
+
   // Add a click event on buttons to open a specific modal
   (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
     const modal = $trigger.dataset.target;
