@@ -56,11 +56,11 @@ const pageStart = async function() {
     console.log( nextPageToken );
     console.log( previousPageToken );
     const youtubeItems = [ ...youtubeData.items ];
-    const videosHTML = createVideosHTML(  );
+    const videosHTML = createVideosHTML( youtubeData.items );
   } );
 }
 
-pageStart();
+// pageStart();
 
 
 

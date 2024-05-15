@@ -6,74 +6,31 @@ const fetchYoutubeApi = async function() {
   return searchData;
 }
 
-pageStart();
-
 const pageStart = async function() {
-  const searchInput = document.querySelector( "#search-input" );
-  const searchBtn = document.querySelector( "#search-btn" );
+  const searchBtn = document.querySelector( ".search-btn" );
+  const searchModal = document.querySelector( ".modal" );
 
-
-  searchBtn.addEventListener( "click", async function( event ) {
+  searchBtn.addEventListener( "click", function() {
+    searchModal.classList.add( "is-active" );
+  } );
+  
+  searchModal.addEventListener( "click", async function( event ) {
     event.preventDefault();
-    const youtubeData = await fetchYoutubeApi();
-    localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-    window.location.href = "./index.html";
+    const target = event.target;
+    if( !target.closest( ".modal-content" ) ) {
+      searchModal.classList.remove( "is-active" );
+    }
+  
+    if( target.classList.contains( "search-option" ) ) {
+      const youtubeData = await fetchYoutubeApi( target.textContent );
+      localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+      window.location.href = "./index.html";
+      console.log( youtubeData );
+    }
   } );
 }
 
 pageStart();
-// Transfer Youtube Data to Local Storage
-// Redirect to index.html page
-searchBtn.addEventListener( "click", async function( event ) {
-  event.preventDefault();
-  const youtubeData = await fetchYoutubeApi();
-  localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-  window.location.href = "./index.html"
-} );
-
-// Script for the Modul
-document.addEventListener('DOMContentLoaded', () => {
-  // Functions to open and close a modal
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
-
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
-
-  function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
-
-  // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
-
-    $trigger.addEventListener('click', () => {
-      openModal($target);
-    });
-  });
-
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
-
-    $close.addEventListener('click', () => {
-      closeModal($target);
-    });
-  });
-
-  // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
-      closeAllModals();
-    }
-  });
-});
 
 //Add hamburger dropdown menu to navbar
 
