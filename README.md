@@ -4,18 +4,10 @@
 
 We want to have an application to aid users in finding inspiration for home improvement projects through pictures, tutorials, and video, in an effort to improve their home at a fraction of the costs.
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+N/A
 
 ## Usage
 
