@@ -4,15 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DIY Hub</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./assets/styles2.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
   </head>
   <body>
-    <section class="hero is-medium ">
+    <section class="hero is-large">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
@@ -26,19 +28,32 @@
                     alt="Logo"
                   />
                 </figure>
-                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                 <span></span>
-                </span>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                  <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                      <span aria-hidden="true"></span>
+                      <span aria-hidden="true"></span>
+                      <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+                
+                  <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                      <!-- Navbar items -->
+                      <a class="navbar-item" href="#">Home</a>
+                      <a class="navbar-item" href="#">About</a>
+                      <a class="navbar-item" href="#">Services</a>
+                      <a class="navbar-item" href="#">Contact</a>
+                    </div>
+                  </div>
+                </nav>
+               
               
             </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+            <!-- <div id="navbarMenuHeroA" class="navbar-menu">
              
                 <span class="navbar-item">
-                  <a class="button is-primary is-inverted">
+                  <a class="button is-inverted">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -46,7 +61,7 @@
                   </a>
                 </span>
                 <span class="navbar-item">
-                  <a class="button is-primary is-inverted">
+                  <a class="button is-inverted">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -54,7 +69,7 @@
                   </a>
                 </span>
                 <span class="navbar-item">
-                  <a class="button is-primary is-inverted">
+                  <a class="button is-inverted">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -62,14 +77,14 @@
                   </a>
                 </span>
                 <span class="navbar-item">
-                  <a class="button is-primary is-inverted">
+                  <a class="button is-inverted">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Contact</span>
                   </a>
                 </span>
-              </div>
+              </div> -->
             </div>
           </div>
         </nav>
@@ -84,59 +99,55 @@
         <div class="field has-addons">
           <div class="control">
 
-            <!-- Alejandro: Added id of search-input, so I can select it in Javascript -->
-
-            <div class="dropdown">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-      <span>Choose your project</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-    <div class="dropdown-content">
-      <a href="#" class="dropdown-item"> Front Porch </a>
-      <a href="#" class="dropdown-item"> Hall Way </a>
-      <a href="#" class="dropdown-item"> Dining Room </a>
-      <a href="#" class="dropdown-item"> Living Room </a>
-      <a href="#" class="dropdown-item"> Kitchen </a>
-      <a href="#" class="dropdown-item"> Bathroom </a>
-      <a href="#" class="dropdown-item"> Bedroom </a>
-      <hr class="dropdown-divider" />
-      <a href="#" class="dropdown-item"> More </a>
-    </div>
-  </div>
-</div>
-
             <!-- Alejandro: Added id of search-btn, so I can select it in Javascript -->
-            <button class="button is-info" id="search-btn">Search</button>
+              <div class="dropdown">
+                <div class="dropdown-trigger">
+                 <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                   <span>Click Here To Get Started</span>
+                   <span class="icon is-large">
+                     <i class="fas fa-angle-down" aria-hidden="true"></i>
+                   </span>
+                 </button>
+               </div>
+               <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                 <div class="dropdown-content">
+                   <a href="#" class="dropdown-item"> Front Porch </a>
+                   <a href="#" class="dropdown-item"> Hall Way </a>
+                   <a href="#" class="dropdown-item"> Dining Room </a>
+                   <a href="#" class="dropdown-item"> Living Room </a>
+                   <a href="#" class="dropdown-item"> Kitchen </a>
+                   <a href="#" class="dropdown-item"> Bathroom </a>
+                   <a href="#" class="dropdown-item"> Bedroom </a>
+                   <a href="#" class="dropdown-item"> Backyard </a>
+                   <hr class="dropdown-divider" />
+                   <a href="#" class="dropdown-item"> More </a>
+                 </div>
+               </div>
+             </div>
+            </button>
+            <!-- Your content -->
+            
           </div>
         </div>
       </div>
-
-      <!-- Hero footer: will stick at the bottom -->
-      <!-- <div class="hero-foot">
-        <nav class="tabs">
-          <div class="container is-centered">
-            <ul>
-              <li class="is-active has-text-centered"><a>Overview</a></li>
-              <li><a></a></li>
-              <li><a></a></li>
-              <li><a></a></li>
-              <li><a></a></li>
-              <li><a></a></li>
-            </ul>
+      <div id="modal-js-example" class="modal">
+        <div class="modal-background"></div>
+      
+        <div class="modal-content">
+          <div class="box">
+            <p>Modal JS example</p>
+            
           </div>
-        </nav>
+        </div>
+      
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
-    </section>
-  </body> -->
+
+
 
   <!-- Alejandro: Linked the script.js file -->
   <script src="./assets/globalVariables.js"></script>
-  <script src="./assets/script.js"></script>
+  <script src="/assets/script.js"></script>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
