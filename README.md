@@ -11,12 +11,15 @@ N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+As you enter our [Home website](index2.html), you can see our logo, along with 4 navigation tags that will one day lead you to the intended tags. In the middle of the page you will find our most basic description of the app, along with a search dropdown modal. When you clicj on one of the selections, you will be redirected to another page where there will be rendered videos related to your selection. 
+
+In [DIY videos](index.html), you wil be able to see videos on the related search using YouTube API. Our app filters the other non related videos to bring you the videos that you need in order to get your home project done. Along with the YouTube API comes its features. You are able to watch the videos in full screen, rewind, pause, ect. This page also includes a "Prev" and "Next" button to browse through new videos or go back to the previous videos. There is also a search bar included in case you want to search for something else. When you click on "About" the website takes you to the quick story of how the app became reality.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
 
-![alt text](/assets/images/Diyhublogo.png)
+![App logo](./assets/images/Diyhublogo.png)
+![Home Page]()
 
 
 ## Credits
@@ -36,7 +39,7 @@ The last section of a high-quality README file is the license. This lets other d
 
 Bulma -CSS 
 Youtube- API
-Pinterest- API
+Tumblr- API
 
 ## How to Contribute
 
