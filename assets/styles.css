@@ -102,13 +102,14 @@ img {
     height: 300px;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 20px;
+    margin: 0 ;
 }
 
 .images-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     margin: 20px;
 }
 .pagination {
@@ -118,4 +119,7 @@ img {
 .prev-btn, .next-btn, .page{
 color: black;
 
+=======
+    margin: 0;
+>>>>>>> 99ee1b9f9e3bcc78ef531042dce8409eacda9b39
 }
