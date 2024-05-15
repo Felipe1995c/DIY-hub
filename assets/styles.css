@@ -111,3 +111,11 @@ img {
     justify-content: space-between;
     margin: 20px;
 }
+.pagination {
+    max-width: 300px;
+    margin:auto auto 50px;
+}
+.prev-btn, .next-btn, .page{
+color: black;
+
+}
