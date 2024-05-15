@@ -12,10 +12,10 @@
 <body>
 
     <div class="navbar is-mobile">
-        <a href="#">Home</a>
-        <a href="#">About</a>
+        <a href="./index2.html">Home</a>
+        <a href="#about">About</a>
         <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
         <div class="search-container">
             <form action="/search" method="get">
                 <input type="text" placeholder="Search..." name="search">
@@ -24,13 +24,13 @@
         </div>
     </div>
     <main class="main-container">
-        <h3>DYI Videos </h3>
+        <h3>DIY Videos </h3>
 
         <!-- Alejandro: Testing this pagination area -->
-        <div class="pagination" style="max-width: 300px; margin: auto auto 50px;">
-            <button class="prev-btn" style="color: black;">Prev</button>
+        <div class="pagination">
+            <button class="prev-btn">Prev</button>
             <p class="page">1</p>
-            <button class="next-btn" style="color: black;">Next</button>
+            <button class="next-btn">Next</button>
         </div>
         <section class="container is-fluid columns is-mobile">
 
@@ -51,12 +51,11 @@
                     src="https://hips.hearstapps.com/hmg-prod/images/simple-backyard-projects-1599585129.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*">
             </div>
         </section>
-        <!--Prev and next buttons-->
-        <form><button id="prev" placeholder="Previous">Previous</button> <span><button id="next" placeholder="Next">Next</button></span></form>
+        
     </main>
     <footer class="footer">
         <div class="content has-text-centered">
-            <h5>About US</h5>
+            <h5 id="about">About US</h5>
             <p>We started from the bottom... now we are here. We grew up working multiple professions to learn all we
                 know
                 now. Some of stuff we learned doesn't apply to the professions and projects we are doing today.</p>
@@ -64,14 +63,14 @@
                 We created this app to filter out all the
                 projects you may not need to but are available to you whenever you decide you want to try something new
             </p>
-            <p><strong><a href="https://felipe1995c.github.io/DIY-hub/">DIY APP</a> created by Group 1</strong></p>
+            <p id="contact"><strong><a href="https://felipe1995c.github.io/DIY-hub/">DIY APP</a> created by Group 1</strong></p>
 
         </div>
     </footer>
 
-<!-- Alejandro: Linked the results.js file -->
-<script src="./assets/globalVariables.js"></script>
-<script src="./assets/results.js"></script>
+    <!-- Alejandro: Linked the results.js file -->
+    <script src="./assets/globalVariables.js"></script>
+    <script src="./assets/results.js"></script>
 </body>
 
 </html>
