@@ -1,7 +1,12 @@
 "use strict";
 
-const fetchYoutubeApi = async function() {
-  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=3&order=viewCount&q=ducks` );
+const apiObj = {
+  key : "AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw",
+  searchUrl : "https://www.googleapis.com/youtube/v3/search"
+}
+
+const fetchYoutubeApi = async function( searchTerm ) {
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=6&order=viewCount&q=${ searchTerm } home improvement DIY` );
   const searchData = await searchRes.json();
   return searchData;
 }
