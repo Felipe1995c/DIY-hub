@@ -1,16 +1,5 @@
 "use strict";
 
-const prevBtn = document.querySelector( ".prev-btn" );
-const page = document.querySelector( ".page" );
-const nextBtn = document.querySelector( ".next-btn" );
-const videoContainer = document.querySelector( "#video-container" );
-
-const apiObj = {
-  key : "AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw",
-  searchUrl : "https://www.googleapis.com/youtube/v3/search"
-}
-
-// Will create the dynamic HTML for each youtube item ( video )
 const createVideosHTML = function( youtubeItems ) {
   let videosHTML = "";
   for( const item of youtubeItems ) {
@@ -24,32 +13,59 @@ const createVideosHTML = function( youtubeItems ) {
   return videosHTML;
 }
 
-const renderVideos = function( videosHTML ) {
+const renderVideos = function( videoContainer, videosHTML ) {
   videoContainer.innerHTML = videosHTML;
 }
 
 // Working on
-const fetchNextPage = async function( pageToken ) {
-  const nextPageRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=3&order=viewCount&pageToken=${ pageToken }` );
+const fetchNextPage = async function( nextPageToken ) {
+  const nextPageRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=3&order=viewCount&q=ducks&pageToken=${ nextPageToken }` );
   const nextPageData = await nextPageRes.json();
-  console.log( nextPageData );
+  return nextPageData
 }
 
-// Working on
-nextBtn.addEventListener( "click", function() {
-  console.log( "clicked" );
-  fetchNextPage( youtubeData.nextPageToken );
-} );
+const setNextPageToken = function( youtubeData ) {
+  nextPageToken = youtubeData.nextPageToken;
+}
 
-const onPageLoad = async function() {
+const setPreviousPageToken = function( youtubeData ) {
+  previousPageToken = youtubeData.prevPageToken;
+}
+
+const setPageTokens = function( youtubeData ) {
+  setNextPageToken( youtubeData );
+  setPreviousPageToken( youtubeData );
+}
+
+const pageStart = async function() {
+  const prevBtn = document.querySelector( ".prev-btn" );
+  const page = document.querySelector( ".page" );
+  const nextBtn = document.querySelector( ".next-btn" );
+  const videoContainer = document.querySelector( "#video-container" );
   const youtubeData = JSON.parse( localStorage.getItem( "youtubeData" ) ) || [];
   const youtubeItems = [ ...youtubeData.items ];
   const videosHTML = createVideosHTML( youtubeItems );
-  renderVideos( videosHTML );
-  console.log( youtubeData );
+  setNextPageToken( youtubeData );
+
+  renderVideos( videoContainer, videosHTML );
+
+  nextBtn.addEventListener( "click", async function() {
+    const youtubeData = await fetchNextPage( nextPageToken );
+    setPageTokens( youtubeData );
+    console.log( youtubeData );
+    console.log( nextPageToken );
+    console.log( previousPageToken );
+    const youtubeItems = [ ...youtubeData.items ];
+    const videosHTML = createVideosHTML(  );
+  } );
 }
 
-onPageLoad();
+pageStart();
+
+
+
+
+
 
 /*
 Tumblr Info
