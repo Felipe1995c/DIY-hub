@@ -1,5 +1,10 @@
 "use strict";
 
+const tumblrApiObj = {
+  key : "zERLc2rZrUZmPFug5AJoDZf3X0IAkt8rJ7asb784X5PijekyyZ",
+  searchUrl : "https://api.tumblr.com/v2/tagged"
+}
+
 const apiObj = {
   key : "AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw",
   searchUrl : "https://www.googleapis.com/youtube/v3/search"
@@ -7,6 +12,12 @@ const apiObj = {
 
 const fetchYoutubeApi = async function( searchTerm ) {
   const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=6&order=viewCount&q=${ searchTerm } home improvement DIY` );
+  const searchData = await searchRes.json();
+  return searchData;
+}
+
+const fetchTumblrApi = async function( searchTerm, timestamp = "" ) {
+  const searchRes = await fetch( `${ tumblrApiObj.searchUrl }?tag=${ searchTerm }&api_key=${ tumblrApiObj.key }&before=${ timestamp }` );
   const searchData = await searchRes.json();
   return searchData;
 }
@@ -29,8 +40,36 @@ const pageStart = async function() {
     if( target.classList.contains( "search-option" ) ) {
       const youtubeData = await fetchYoutubeApi( target.textContent );
       localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+
+      const tumblrData = await fetchTumblrApi( target.textContent );
+      const allTumblrItems = tumblrData.response;
+      const tumblrPhotoItems = [];
+      const maxPhotos = 6;
+      let lastTumblrItemTimestamp;
+
+      for( let i = 0; i < allTumblrItems.length; i++ ) {
+        if( allTumblrItems[ i ].type === "photo" && tumblrPhotoItems.length < maxPhotos ) {
+          tumblrPhotoItems.push( allTumblrItems[ i ] );
+        }
+        if( i === ( allTumblrItems.length - 1 ) ) {
+          lastTumblrItemTimestamp = allTumblrItems[ i ].timestamp;
+        }
+      }
+
+      while( tumblrPhotoItems.length < maxPhotos ) {
+        const tumblrData = await fetchTumblrApi( target.textContent, lastTumblrItemTimestamp );
+        const allTumblrItems = tumblrData.response;
+        for( let i = 0; i < allTumblrItems.length; i++ ) {
+          if( allTumblrItems[ i ].type === "photo" && tumblrPhotoItems.length < maxPhotos ) {
+            tumblrPhotoItems.push( allTumblrItems[ i ] );
+          }
+          if( i === ( allTumblrItems.length - 1 ) ) {
+            lastTumblrItemTimestamp = allTumblrItems[ i ].timestamp;
+          }
+        }
+      }
+      localStorage.setItem( "tumblrPhotoItems", JSON.stringify( tumblrPhotoItems ) );
       window.location.href = "./index.html";
-      console.log( youtubeData );
     }
   } );
 }

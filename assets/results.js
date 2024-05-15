@@ -17,6 +17,18 @@ const renderVideos = function( videoContainer, videosHTML ) {
   videoContainer.innerHTML = videosHTML;
 }
 
+const createPhotosHTML = function( tumblrPhotoUrls ) {
+  let photosHTML = "";
+  for( const url of tumblrPhotoUrls ) {
+    photosHTML += `<img src="${ url }" class="cell" alt="DIY Image">`;
+  }
+  return photosHTML;
+}
+
+const renderPhotos = function( photosContainer, photosHTML ) {
+  photosContainer.innerHTML = photosHTML;
+}
+
 const pageStart = async function() {
   const videoContainer = document.querySelector( "#video-container" );
   const youtubeData = JSON.parse( localStorage.getItem( "youtubeData" ) ) || [];
@@ -24,18 +36,15 @@ const pageStart = async function() {
   const videosHTML = createVideosHTML( youtubeItems );
 
   renderVideos( videoContainer, videosHTML );
+
+  const photosContainer = document.querySelector( ".photos-container" );
+  const tumblrPhotoItems = JSON.parse( localStorage.getItem( "tumblrPhotoItems" ) );
+  const tumblrPhotoUrls = [];
+  for( const item of tumblrPhotoItems ) {
+    tumblrPhotoUrls.push( item.photos[ 0 ].original_size.url );
+  }
+  const photosHTML = createPhotosHTML( tumblrPhotoUrls );
+  renderPhotos( photosContainer, photosHTML );
 }
 
 pageStart();
-
-
-
-
-
-
-/*
-Tumblr Info
-secret: kwEd1LlTk0RwFcE9dPrQCgY4Y1oOCuJylcjwd92n99L4xlFEjT 
-oAuth Consumer Key: zERLc2rZrUZmPFug5AJoDZf3X0IAkt8rJ7asb784X5PijekyyZ
-Tumblr Base URL: https://api.tumblr.com
-*/
