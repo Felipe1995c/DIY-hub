@@ -50,9 +50,10 @@ div.narbar-brand{
 }
 span.navbar-item{
     border: 0;
-    padding: ;
+    padding: 0;
+    font-size: 35px;
 }
-.nav-burger {
+.a.navbar-burger {
     display: inline-flex;
 }
 .navbar-item{
@@ -61,6 +62,6 @@ span.navbar-item{
     
 }
 a.navbar-item{
-    margin: 0;
-    padding: o;
+    margin: 5px;
+    padding: 5px;
 }
