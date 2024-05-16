@@ -1,74 +1,83 @@
 "use strict";
 
-const fetchYoutubeApi = async function() {
-  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=3&order=viewCount&q=ducks` );
+const tumblrApiObj = {
+  key : "zERLc2rZrUZmPFug5AJoDZf3X0IAkt8rJ7asb784X5PijekyyZ",
+  searchUrl : "https://api.tumblr.com/v2/tagged"
+}
+
+const apiObj = {
+  key : "AIzaSyAHHiqc8V6WsxjRWYaSWUxWggO_bjRvWUw",
+  searchUrl : "https://www.googleapis.com/youtube/v3/search"
+}
+
+const fetchYoutubeApi = async function( searchTerm ) {
+  const searchRes = await fetch( `${ apiObj.searchUrl }?key=${ apiObj.key }&type=video&maxResults=6&order=viewCount&q=${ searchTerm } home improvement DIY` );
   const searchData = await searchRes.json();
   return searchData;
 }
 
+const fetchTumblrApi = async function( searchTerm, timestamp = "" ) {
+  const searchRes = await fetch( `${ tumblrApiObj.searchUrl }?tag=${ searchTerm }&api_key=${ tumblrApiObj.key }&before=${ timestamp }` );
+  const searchData = await searchRes.json();
+  return searchData;
+}
 
 const pageStart = async function() {
-  const searchInput = document.querySelector( "#search-input" );
-  const searchBtn = document.querySelector( "#search-btn" );
+  const searchBtn = document.querySelector( ".search-btn" );
+  const searchModal = document.querySelector( ".modal" );
 
 
-  // searchBtn.addEventListener( "click", async function( event ) {
-  //   event.preventDefault();
-  //   const youtubeData = await fetchYoutubeApi();
-  //   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-  //   window.location.replace( "./index.html");
-  // } );
+  searchBtn.addEventListener( "click", function() {
+    searchModal.classList.add( "is-active" );
+  } );
+  
+  searchModal.addEventListener( "click", async function( event ) {
+    event.preventDefault();
+    const target = event.target;
+    if( !target.closest( ".modal-content" ) ) {
+      searchModal.classList.remove( "is-active" );
+    }
+  
+    if( target.classList.contains( "search-option" ) ) {
+      const youtubeData = await fetchYoutubeApi( target.textContent );
+      localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+
+      const tumblrData = await fetchTumblrApi( target.textContent );
+      const allTumblrItems = tumblrData.response;
+      const tumblrPhotoItems = [];
+      const maxPhotos = 6;
+      let lastTumblrItemTimestamp;
+
+      for( let i = 0; i < allTumblrItems.length; i++ ) {
+        if( allTumblrItems[ i ].type === "photo" && tumblrPhotoItems.length < maxPhotos ) {
+          tumblrPhotoItems.push( allTumblrItems[ i ] );
+        }
+        if( i === ( allTumblrItems.length - 1 ) ) {
+          lastTumblrItemTimestamp = allTumblrItems[ i ].timestamp;
+        }
+      }
+
+      while( tumblrPhotoItems.length < maxPhotos ) {
+        const tumblrData = await fetchTumblrApi( target.textContent, lastTumblrItemTimestamp );
+        const allTumblrItems = tumblrData.response;
+        for( let i = 0; i < allTumblrItems.length; i++ ) {
+          if( allTumblrItems[ i ].type === "photo" && tumblrPhotoItems.length < maxPhotos ) {
+            tumblrPhotoItems.push( allTumblrItems[ i ] );
+          }
+          if( i === ( allTumblrItems.length - 1 ) ) {
+            lastTumblrItemTimestamp = allTumblrItems[ i ].timestamp;
+          }
+        }
+      }
+      localStorage.setItem( "tumblrPhotoItems", JSON.stringify( tumblrPhotoItems ) );
+      window.location.href = "./index.html";
+    }
+  } );
+
 }
 
 pageStart();
 
-
-
-
-
-// Script for the Modul
-document.addEventListener('DOMContentLoaded', () => {
-  // Functions to open and close a modal
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
-
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
-
-  function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
-
-  // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
-
-    $trigger.addEventListener('click', () => {
-      openModal($target);
-    });
-  });
-
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
-
-    $close.addEventListener('click', () => {
-      closeModal($target);
-    });
-  });
-
-  // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
-      closeAllModals();
-    }
-  });
-});
 
 //Add hamburger dropdown menu to navbar
 
