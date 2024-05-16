@@ -29,8 +29,6 @@ body {
   background-image: url("./images/Diy-Background.jpg");
   height: 100%;
 
-  
-    
 }
 
 p.title {
@@ -72,6 +70,14 @@ div#navbarMenu.navbar-menu. {
   display: inline;
   background-color: transparent;
 }
-button#search-btn.button {
-  background-color: yellow;
+button.button.search-btn.has-text-warning-darker {
+  background-color: black;
+}
+div.grid.p-5{
+    background-image: url("./images/Diy-Background.jpg");
+  height: 100%;
+}
+button.button.cell.search-option{
+    background-color: black;
+    
 }

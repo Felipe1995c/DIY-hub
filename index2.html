@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
   <body>
-    <section class="hero is-large">
+    <section class="hero is-medium">
 
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
@@ -29,7 +29,7 @@
               </figure>
               <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                  <a role="button" class="navbar-burger has-text-danger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -39,51 +39,16 @@
                 <div id="navbarMenu" class="navbar-menu ">
                   <div class="navbar-start ">
                     <!-- Navbar items -->
-                    <a class="navbar-item is-underlined has-text-success has-text-weight-bold" href="#">Home</a>
-                    <a class="navbar-item is-underlined has-text-danger has-text-weight-bold" href="#">About</a>
+                    <a class="navbar-item is-underlined has-text-success has-text-weight-bold" href="./index2.html">Home</a>
+                    <a class="navbar-item is-underlined has-text-danger has-text-weight-bold" href="#about">About</a>
                     <a class="navbar-item is-underlined has-text-info has-text-weight-bold " href="#">Services</a>
-                    <a class="navbar-item is-underlined has-text-warning has-text-weight-bold" href="#">Contact</a>
+                    <a class="navbar-item is-underlined has-text-warning has-text-weight-bold" href="#contact">Contact</a>
                   </div>
                 </div>
               </nav>
                
             </div>
-            <!-- <div id="navbarMenuHeroA" class="navbar-menu">
-             
-              <span class="navbar-item">
-                <a class="button is-inverted">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Home</span>
-                </a>
-              </span>
-              <span class="navbar-item">
-                <a class="button is-inverted">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>About</span>
-                </a>
-              </span>
-              <span class="navbar-item">
-                <a class="button is-inverted">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Service</span>
-                </a>
-              </span>
-              <span class="navbar-item">
-                <a class="button is-inverted">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Contact</span>
-                </a>
-              </span>
-              
-            </div> -->
+            
           </div>
         </nav>
       </div>      
@@ -102,14 +67,7 @@
             <!-- Alejandro: Added id of search-btn, so I can select it in Javascript -->
               <div class="dropdown">
                 <div class="dropdown-trigger">
-                 <button class="button" id="search-btn" aria-haspopup="true" aria-controls="dropdown-menu3">
-
-                   <span class="text has-text-info has-text-weight-bold">Click Here To Get Started</span>
-
-                   <span class="icon is-large">
-                     <i class="fas fa-angle-down" aria-hidden="true"></i>
-                   </span>
-                 </button>
+                 
                </div>
                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                  <div class="dropdown-content">
@@ -128,20 +86,20 @@
              </div>
 
             <!-- Alejandro: added this modal -->
-            <button class="button search-btn">Search DIY</button>
+            <button class="button search-btn has-text-warning-darker has-text-weight-bold">Click Here To Get Started</button>
             <div class="modal p-5">
               <div class="modal-background"></div>
               <div class="modal-content has-background-light">
                 <form action="" class="search-form">
                   <div class="grid p-5">
-                    <button class="button cell search-option">Front Porch</button>
-                    <button class="button cell search-option">Hall Way</button>
-                    <button class="button cell search-option">Dining Room</button>
-                    <button class="button cell search-option">Living Room</button>
-                    <button class="button cell search-option">Kitchen</button>
-                    <button class="button cell search-option">Bathroom</button>
-                    <button class="button cell search-option">Bedroom</button>
-                    <button class="button cell search-option">Backyard</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold ">Front Porch</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Hall Way</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold ">Dining Room</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Living Room</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Kitchen</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Bathroom</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Bedroom</button>
+                    <button class="button cell search-option has-text-warning-darker has-text-weight-bold">Backyard</button>
                   </div>
                 </form>
               </div>
@@ -168,6 +126,18 @@
 
 
     <footer class="footer">
+      <div class="content has-text-centered">
+        <h5 id="about">About US</h5>
+        <p>We started from the bottom... now we are here. We grew up working multiple professions to learn all we
+            know
+            now. Some of stuff we learned doesn't apply to the professions and projects we are doing today.</p>
+        <p> Thankfully<span style='font-size:20px;'>&#128591;</span>, no one else has to learn what they don't want.
+            We created this app to filter out all the
+            projects you may not need to but are available to you whenever you decide you want to try something new
+        </p>
+        <p id="contact"><strong><a href="https://felipe1995c.github.io/DIY-hub/">DIY APP</a> created by Group 1</strong></p>
+
+    </div>
       <div class="content has-text-centered">
         <p>
           <strong>DIY Hub</strong> by
