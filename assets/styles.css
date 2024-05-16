@@ -102,7 +102,7 @@ img {
     height: 300px;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 ;
+    margin: 0;
 }
 
 .images-container {
@@ -110,4 +110,23 @@ img {
     align-items: center;
     justify-content: space-between;
     margin: 0;
+}
+.pagination {
+    justify-content: center;
+}
+.prev-btn,
+.next-btn,
+.page {
+    color: black;
+    margin: 15px;
+    font-weight: 700;
+    
+}
+
+.prev-btn,
+.next-btn {
+    border: solid black 2px;
+    padding: 5px;
+    color: whitesmoke;
+    background: linear-gradient(to top, whitesmoke 10%, #333 25%);
 }

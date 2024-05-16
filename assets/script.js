@@ -24,6 +24,8 @@ pageStart();
 
 
 
+
+
 // Script for the Modul
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
