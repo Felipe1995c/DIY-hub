@@ -26,6 +26,7 @@ const pageStart = async function() {
   const searchBtn = document.querySelector( ".search-btn" );
   const searchModal = document.querySelector( ".modal" );
 
+
   searchBtn.addEventListener( "click", function() {
     searchModal.classList.add( "is-active" );
   } );
@@ -72,9 +73,11 @@ const pageStart = async function() {
       window.location.href = "./index.html";
     }
   } );
+
 }
 
 pageStart();
+
 
 //Add hamburger dropdown menu to navbar
 
