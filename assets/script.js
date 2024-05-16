@@ -6,30 +6,23 @@ const fetchYoutubeApi = async function() {
   return searchData;
 }
 
-pageStart();
 
 const pageStart = async function() {
   const searchInput = document.querySelector( "#search-input" );
   const searchBtn = document.querySelector( "#search-btn" );
 
 
-  searchBtn.addEventListener( "click", async function( event ) {
-    event.preventDefault();
-    const youtubeData = await fetchYoutubeApi();
-    localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-    window.location.href = "./index.html";
-  } );
+  // searchBtn.addEventListener( "click", async function( event ) {
+  //   event.preventDefault();
+  //   const youtubeData = await fetchYoutubeApi();
+  //   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+  //   window.location.replace( "./index.html");
+  // } );
 }
 
 pageStart();
-// Transfer Youtube Data to Local Storage
-// Redirect to index.html page
-searchBtn.addEventListener( "click", async function( event ) {
-  event.preventDefault();
-  const youtubeData = await fetchYoutubeApi();
-  localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-  window.location.href = "./index.html"
-} );
+
+
 
 // Script for the Modul
 document.addEventListener('DOMContentLoaded', () => {
