@@ -62,14 +62,15 @@ a.navbar-item {
   margin: 5px;
   padding: 5px;
 }
+div#navbarMenu.navbar-menu. {
+    display: inline;
+    background-color: transparent;
+  }
 div#navbarMenu.navbar-menu.is-active {
   display: inline;
   background-color: transparent;
 }
-div#navbarMenu.navbar-menu. {
-  display: inline;
-  background-color: transparent;
-}
+
 button.button.search-btn.has-text-warning-darker {
   background-color: black;
 }
