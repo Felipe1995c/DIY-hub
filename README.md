@@ -19,7 +19,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 
 ![App logo](./assets/images/Diyhublogo.png)
-![Home Page]()
+![Home Page](./assets/images/home-screenshot.png)
+![Results Page Videos](./assets/images/results-videos-screenshot.png)
+![Results Page Photos](./assets/images/results-photos-screenshot.png)
+![Results Page About](./assets/images/results-about-screenshot.png)
 
 
 ## Credits
