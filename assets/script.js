@@ -12,15 +12,18 @@ const pageStart = async function() {
   const searchBtn = document.querySelector( "#search-btn" );
 
 
-  searchBtn.addEventListener( "click", async function( event ) {
-    event.preventDefault();
-    const youtubeData = await fetchYoutubeApi();
-    localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
-    window.location.href = "./index.html";
-  } );
+  // searchBtn.addEventListener( "click", async function( event ) {
+  //   event.preventDefault();
+  //   const youtubeData = await fetchYoutubeApi();
+  //   localStorage.setItem( "youtubeData", JSON.stringify( youtubeData ) );
+  //   window.location.replace( "./index.html");
+  // } );
 }
 
 pageStart();
+
+
+
 
 
 // Script for the Modul
