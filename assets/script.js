@@ -70,7 +70,7 @@ const pageStart = async function() {
         }
       }
       localStorage.setItem( "tumblrPhotoItems", JSON.stringify( tumblrPhotoItems ) );
-      window.location.href = "./index.html";
+      window.location.href = "./results.html";
     }
   } );
 
